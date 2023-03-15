@@ -1,4 +1,7 @@
 <script>
+	import gsap from 'gsap/dist/gsap';
+	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <div class="flex h-[100vh] w-full flex-col items-center justify-center bg-gray-100">
