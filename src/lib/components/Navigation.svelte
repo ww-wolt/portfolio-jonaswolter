@@ -1,4 +1,9 @@
 <script>
+	import linkedinIcon from '$lib/icons/linkedin.svg';
+	import githubIcon from '$lib/icons/github.svg';
+	import vimeoIcon from '$lib/icons/vimeo.svg';
+	import instagramIcon from '$lib/icons/instagram.svg';
+
 	let navOpen = false;
 	$: console.log('🚀 ~ toggleNavigation ~ navOpen:', navOpen);
 </script>
@@ -21,10 +26,19 @@
 			<a href="/contact" on:click={() => (navOpen = false)} class=" my-4 rounded-[1000px] border-4 px-10 py-2  decoration-accent-400 hover:line-through"
 				>CONTACT</a
 			>
-			<div class="flex justify-between mt-8">
-				<a href="https://github.com/moonclimber1">
-					<img src="/src/lib/icons/github.svg" alt="Github" />
+			<div class="mt-8 flex items-center justify-center">
+				<a href="https://www.linkedin.com/in/jonas-wolter/" class="p-3">
+					<img src={linkedinIcon} alt="LinkedIn" />
 				</a>
+				<a href="https://github.com/moonclimber1" class="p-3">
+					<img src={githubIcon} alt="Github" />
+				</a>
+				<a href="https://vimeo.com/jonaswolter" class="p-3">
+					<img src={vimeoIcon} alt="Vimeo" />
+				</a>
+				<!-- <a href="https://www.instagram.com/moonclimber_/" class="p-3">
+					<img src={instagramIcon} alt="Instagram" />
+				</a> -->
 			</div>
 		</div>
 	</div>
