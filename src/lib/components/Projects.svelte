@@ -1,8 +1,10 @@
 <script>
 	import exampleImage from '$lib/images/dream-of-me.jpg';
+	import { onMount } from 'svelte';
+	import { fetchProjects } from '$lib/modules/ProjectsProvider.js';
 
-	import { projects } from '$lib/modules/ProjectsProvider.js';
-	$: console.log('🚀 ~ projects:', $projects);
+	let projects = fetchProjects();
+	console.log('🚀 ~ projects:', projects);
 
 	let sampleProjects = [
 		{ title: "Don't Answer Be Happy", subtitle: 'Bachelor Project' },
