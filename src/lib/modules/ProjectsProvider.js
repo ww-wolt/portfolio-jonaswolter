@@ -1,32 +1,34 @@
 import { writable } from 'svelte/store';
-// import JSSoup from 'jssoup';
+// export const projects = new writable();
 
-// import str from '$lib/projects/dream-of-me.html?raw';
-// console.log('🚀 ~ str:', str);
+import DomParser from 'dom-parser';
+const parser = new DomParser();
 
-export const projects = new writable();
-
-// var soup = new JSSoup('<html><head>hello</head></html>');
-// console.log(soup.find('head'));
+let projects;
 
 export async function fetchProjects() {
-	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });
+	if (projects) return projects;
 
+	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });
 	const allProjects = await Promise.all(
 		Object.entries(allFiles).map(async ([path, resolver]) => {
 			const rawHtml = await resolver();
 			const slug = path.split('/').at(-1).replace('.html', '');
 
-			// const soup = new JSSoup(rawHtml);
-			// const title = soup.find('h1');
+			const dom = parser.parseFromString(rawHtml);
+			console.log('parsed', dom.getElementById('keywords')?.innerHTML);
+
+			const title = dom.getElementsByTagName('h1')[0]?.innerHTML;
+			const subtitle = dom.getElementsByTagName('h2')[0]?.innerHTML;
 
 			return {
 				slug: slug,
+				title: title,
+				subtitle: subtitle,
 				rawHtml: rawHtml
-				// title: title
 			};
 		})
 	);
-	console.log('🚀 ~ fetchProjects ~ allProjects:', allProjects);
-	return allProjects;
+	projects = allProjects;
+	return projects;
 }
