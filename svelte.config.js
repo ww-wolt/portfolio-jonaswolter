@@ -7,7 +7,10 @@ const config = {
 		adapter: adapter({
 			runtime: 'edge',
 			regions: 'all'
-		})
+		}),
+		prerender: {
+			entries: ['/work/dream-of-me', '/work/dont-answer-be-happy']
+		}
 	},
 	preprocess: vitePreprocess()
 };

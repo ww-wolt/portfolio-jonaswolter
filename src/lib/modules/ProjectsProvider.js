@@ -12,7 +12,11 @@ export async function fetchProjects() {
 	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });
 	const allProjects = await Promise.all(
 		Object.entries(allFiles).map(async ([path, resolver]) => {
-			const rawHtml = await resolver();
+			let rawHtml = await resolver();
+
+			// adjust image path
+			rawHtml = rawHtml.replaceAll('../images', '/src/lib/images');
+
 			const slug = path.split('/').at(-1).replace('.html', '');
 
 			const dom = parser.parseFromString(rawHtml);
