@@ -1,16 +1,32 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
+	import heroArrowIcon from '$lib/icons/hero-arrow.png';
+	import gsap from 'gsap/dist/gsap';
+	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	let arrow;
+
+	onMount(async () => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.to(arrow, {
+			scrollTrigger: {
+				trigger: '.trigger',
+				start: 'top top',
+				toggleActions: 'restart none none reverse'
+			},
+			y: 150,
+			opacity: 0,
+			duration: 0.8,
+			ease: 'power1.inOut'
+		});
+	});
 </script>
 
 <section class=" h-screen-small relative flex  w-full  items-center justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:items-end">
 	<div class=" fluid-font-title w-full text-right font-medium ">
 		<h2 class=" fluid-font-subtitle font-normal leading-[1.4em]">Jonas Wolter</h2>
-		<!-- <h1 class="mb-3">New Media <u class="   underline  decoration-green-400 decoration-[12px]">Artist</u></h1>
-
-		<h1 class="relative mb-3 inline">
-			<span class=" after:absolute after:bottom-[-1%] after:right-0 after:-z-10 after:h-3 after:w-[99%] after:bg-cyan-300">Programmer</span>
-		</h1> -->
-
 		<div class="">
 			<h1 class="relative inline whitespace-nowrap">New Media <span class="artist">Artist</span></h1>
 		</div>
@@ -22,6 +38,10 @@
 		<div class="">
 			<h1 class="relative inline whitespace-nowrap"><span class="programmer">Programmer</span></h1>
 		</div>
+	</div>
+	<div class="trigger absolute top-[10vh] hidden h-2 w-2" />
+	<div class="fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
+		<img bind:this={arrow} src={heroArrowIcon} class="w-8 sm:w-10 md:w-11 lg:w-12 xl:w-14" alt="Down Arrow" />
 	</div>
 </section>
 
