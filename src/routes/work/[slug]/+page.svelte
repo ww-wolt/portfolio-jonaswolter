@@ -4,7 +4,7 @@
 </script>
 
 <!-- <h1>{data.project?.title}</h1> -->
-<div class="prose">{@html data.project?.rawHtml}</div>
+<div class="prose">{@html data.rawHtml}</div>
 
 <style>
 	:global(#abstract) {

@@ -17,22 +17,30 @@ export async function fetchProjects() {
 			// adjust image path
 			rawHtml = rawHtml.replaceAll('../images', '/src/lib/images');
 
-			const slug = path.split('/').at(-1).replace('.html', '');
-
 			const dom = parser.parseFromString(rawHtml);
-			console.log('parsed', dom.getElementById('keywords')?.innerHTML);
 
+			// remove styles
+			const link = dom.getElementsByTagName('link')[0]?.outerHTML;
+			rawHtml = rawHtml.replaceAll(link, '');
+
+			// get slug
+			const slug = path.split('/').at(-1).replace('.html', '');
+			const url = `/work/${slug}`;
+
+			// get title & subtitle
 			const title = dom.getElementsByTagName('h1')[0]?.innerHTML;
 			const subtitle = dom.getElementsByTagName('h2')[0]?.innerHTML;
 
 			return {
-				slug: slug,
-				title: title,
-				subtitle: subtitle,
-				rawHtml: rawHtml
+				slug,
+				url,
+				title,
+				subtitle,
+				rawHtml
 			};
 		})
 	);
 	projects = allProjects;
+	console.log('🚀 ~ fetchProjects ~ projects:', projects);
 	return projects;
 }

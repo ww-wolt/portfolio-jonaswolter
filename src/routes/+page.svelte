@@ -9,6 +9,8 @@
 
 	import Projects from '../lib/components/Projects.svelte';
 
+	export let data;
+
 	onMount(async () => {
 		gsap.registerPlugin(ScrollTrigger);
 		// gsap.to('.title', {
@@ -24,5 +26,5 @@
 
 <Background />
 <Hero />
-<Projects />
+<Projects projects={data.projects} />
 <Footer />

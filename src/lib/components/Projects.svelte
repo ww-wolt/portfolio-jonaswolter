@@ -3,8 +3,8 @@
 	import { onMount } from 'svelte';
 	import { fetchProjects } from '$lib/modules/ProjectsProvider.js';
 
-	let projects = fetchProjects();
-	console.log('🚀 ~ projects:', projects);
+	export let projects;
+	$: console.log('🚀 ~ projects:', projects);
 
 	let sampleProjects = [
 		{ title: "Don't Answer Be Happy", subtitle: 'Bachelor Project' },
@@ -24,6 +24,11 @@
 					<h5>{project.subtitle}</h5>
 				</article>
 			</a>
+		{/each}
+	</div>
+	<div class="mt-80 flex w-full justify-around">
+		{#each projects as project}
+			<a href={project.url} class=" bg-green-300">{project.title}</a>
 		{/each}
 	</div>
 </section>
