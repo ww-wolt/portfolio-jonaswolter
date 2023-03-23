@@ -2,7 +2,7 @@
 	import gsap from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-	import fadeGradient from '$lib/images/fade-gradient.png';
+	import fadeGradient from '$lib/graphics/fade-gradient.png';
 
 	export let data;
 
@@ -62,7 +62,7 @@
 	}
 
 	.fade-gradient {
-		background-image: url('$lib/images/fade-gradient.png');
+		background-image: url('$lib/graphics/fade-gradient.png');
 		background-repeat: repeat-x;
 		background-repeat: round;
 	}

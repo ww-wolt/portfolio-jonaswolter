@@ -1,5 +1,5 @@
 <script>
-	import exampleImage from '$lib/images/dream-of-me.jpg';
+	import exampleImage from '$lib/graphics/dream-of-me.jpg';
 	import { onMount } from 'svelte';
 	import { fetchProjects } from '$lib/modules/ProjectsProvider.js';
 	import gsap from 'gsap/dist/gsap';
