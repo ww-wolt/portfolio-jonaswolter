@@ -24,6 +24,9 @@ module.exports = {
 					900: '#00312B'
 				},
 				backdrop: '#ECECEC'
+			},
+			transitionDuration: {
+				400: '400ms'
 			}
 		}
 	},
