@@ -22,12 +22,10 @@ module.exports = {
 					700: '#007362',
 					800: '#004A40',
 					900: '#00312B'
-				}
+				},
+				backdrop: '#ECECEC'
 			}
 		}
 	},
-	plugins: [
-		require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-	]
+	plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')]
 };
