@@ -29,10 +29,10 @@
 	<div id="work" />
 	<div class="grid gap-16 lg:grid-cols-2">
 		{#each projects as project, i}
-			<a href={project.url} class="card relative mb-2" class:col-span-full={i == 0}>
+			<a href={project.url} class="card group relative mb-2" class:col-span-full={i == 0}>
 				<article>
 					<div class="aspect-w-16 aspect-h-10 overflow-hidden rounded-3xl">
-						<img src={project.headerImagePath} alt="Project card" class="  object-cover transition-all duration-400 hover:scale-[1.04]" />
+						<img src={project.headerImagePath} alt="Project card" class="  object-cover transition-all duration-400 ease-out  group-hover:scale-[1.04]" />
 					</div>
 					<div>
 						<h4 class=" absolute bottom-0  right-0 translate-y-1/2 rounded-full bg-white px-4 py-1 ">{project.title}</h4>
@@ -44,8 +44,10 @@
 	</div>
 </section>
 
-<!-- <div class="absolute">
-	<div class="aspect-w-16 aspect-h-10 overflow-hidden rounded-3xl">
-		<img src={project.headerImagePath} alt="Project card" class="  object-cover transition-all duration-400 hover:scale-[1.04]" />
+{#if false}
+	<div class="fixed top-0 h-screen w-screen">
+		<div class="aspect-w-16 aspect-h-10 overflow-hidden">
+			<img src={exampleImage} alt="Project card" class="object-cover" />
+		</div>
 	</div>
-</div> -->
+{/if}

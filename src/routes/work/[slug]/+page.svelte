@@ -60,14 +60,4 @@
 	:global(#keywords) {
 		@apply p-0;
 	}
-
-	.fade-gradient {
-		background-image: url('$lib/graphics/fade-gradient.png');
-		background-repeat: repeat-x;
-		background-repeat: round;
-	}
-
-	.fade-out-image {
-		mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, transparent 100%);
-	}
 </style>
