@@ -15,28 +15,38 @@ export async function fetchProjects() {
 			let rawHtml = await resolver();
 
 			// adjust image path
-			rawHtml = rawHtml.replaceAll('../images', '/src/lib/images');
+			rawHtml = rawHtml.replaceAll('../../../static', '');
 
 			const dom = parser.parseFromString(rawHtml);
 
 			// remove styles
 			const link = dom.getElementsByTagName('link')[0]?.outerHTML;
 			rawHtml = rawHtml.replaceAll(link, '');
+			const script = dom.getElementsByTagName('script')[0]?.outerHTML;
+			rawHtml = rawHtml.replaceAll(script, '');
 
 			// get slug
 			const slug = path.split('/').at(-1).replace('.html', '');
 			const url = `/work/${slug}`;
 
+			// get header-image
+			const headerImagePath = dom.getElementById('header-image')?.getAttribute('src');
+
 			// get title & subtitle
 			const title = dom.getElementsByTagName('h1')[0]?.innerHTML;
 			const subtitle = dom.getElementsByTagName('h2')[0]?.innerHTML;
 
+			// get content html
+			const contentHtml = dom.getElementById('content')?.outerHTML;
+
 			return {
 				slug,
 				url,
+				headerImagePath,
 				title,
 				subtitle,
-				rawHtml
+				rawHtml,
+				contentHtml
 			};
 		})
 	);
