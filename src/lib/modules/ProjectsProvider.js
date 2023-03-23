@@ -26,18 +26,29 @@ export async function fetchProjects() {
 			rawHtml = rawHtml.replaceAll(script, '');
 
 			// get slug
-			const slug = path.split('/').at(-1).replace('.html', '');
+			const originalSlug = path.split('/').at(-1).replace('.html', '').trim();
+			const slug = originalSlug.includes('.') ? originalSlug.split('.').at(-1) : originalSlug;
 			const url = `/work/${slug}`;
 
 			// get header-image
-			const headerImagePath = dom.getElementById('header-image')?.getAttribute('src');
+			const headerImagePath = dom.getElementById('header-image')?.getAttribute('src').trim();
 
 			// get title & subtitle
-			const title = dom.getElementsByTagName('h1')[0]?.innerHTML;
-			const subtitle = dom.getElementsByTagName('h2')[0]?.innerHTML;
+			const title = dom.getElementById('title')?.innerHTML.trim();
+			const subtitle = dom.getElementById('subtitle')?.innerHTML.trim();
+
+			// get abstract
+			const abstract = dom.getElementById('abstract')?.textContent.trim();
+
+			// get keywords
+			const keywords = dom
+				.getElementById('keywords')
+				?.innerHTML.split('</li>')
+				.map((token) => token.replaceAll('<li>', '').replaceAll('&nbsp;', '').trim())
+				.filter((token) => token != '');
 
 			// get content html
-			const contentHtml = dom.getElementById('content')?.outerHTML;
+			// const contentHtml = dom.getElementById('content')?.outerHTML;
 
 			return {
 				slug,
@@ -45,8 +56,9 @@ export async function fetchProjects() {
 				headerImagePath,
 				title,
 				subtitle,
-				rawHtml,
-				contentHtml
+				abstract,
+				keywords,
+				rawHtml
 			};
 		})
 	);

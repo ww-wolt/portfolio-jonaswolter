@@ -4,7 +4,7 @@
 	import Footer from '../lib/components/Footer.svelte';
 	import Hero from '../lib/components/Hero.svelte';
 
-	import Projects from '../lib/components/Projects.svelte';
+	import ProjectsGrid from '../lib/components/ProjectsGrid.svelte';
 
 	export let data;
 
@@ -13,5 +13,5 @@
 
 <Background />
 <Hero />
-<Projects projects={data.projects} />
+<ProjectsGrid projects={data.projects} />
 <Footer />
