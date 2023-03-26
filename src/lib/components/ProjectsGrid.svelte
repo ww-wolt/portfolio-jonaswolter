@@ -50,20 +50,20 @@
 	<div id="work" />
 	<div class="grid gap-16 lg:grid-cols-2">
 		{#each projects as project, i (project.slug)}
-			<a
-				out:send={{ key: 'expand' }}
-				href={project.url}
-				data-sveltekit-reload
-				on:click|preventDefault={() => handleProjectClick(project)}
-				class=" card group relative mb-2 first:col-span-full"
-			>
+			<a href={project.url} data-sveltekit-reload on:click|preventDefault={() => goto(project.url)} class=" card group relative mb-2 first:col-span-full">
 				<article>
 					<div class="aspect-w-16 aspect-h-10 overflow-hidden rounded-3xl">
 						<img src={project.headerImagePath} alt="Project card" class="object-cover transition-all duration-400 ease-out  group-hover:scale-[1.04]" />
 					</div>
-					<div>
-						<h4 class=" absolute bottom-0 right-0 translate-y-1/2 rounded-full bg-white px-4 py-1 ">{project.title}</h4>
-						<h5 class=" absolute bottom-5 right-0 rounded-full bg-black  px-4 py-1 text-sm text-white">{project.subtitle}</h5>
+					<div
+						class="absolute -bottom-4 right-0 flex flex-col items-end justify-end transition-all duration-400 ease-out group-hover:-translate-x-3 group-hover:-translate-y-7"
+					>
+						<h5
+							class="translate-y-full rounded-full bg-black px-4  py-1  text-sm text-white opacity-0 transition-all duration-400 ease-out  group-hover:translate-y-0  group-hover:opacity-100"
+						>
+							{project.subtitle}
+						</h5>
+						<h4 class=" z-10 rounded-full bg-white px-4 py-1 ">{project.title}</h4>
 					</div>
 				</article>
 			</a>
@@ -78,18 +78,10 @@
 </div>
 
 <!-- {#if transitionActive}
-	<div class="fixed top-0 h-screen w-screen">
-		<div class="aspect-w-16 aspect-h-10 overflow-hidden">
-			<img in:receive={{ key: 'expand' }} src={transitionProject.headerImagePath} alt="Project card" class="object-cover" />
-		</div>
-	</div>
-{/if} -->
-
-{#if transitionActive}
 	<div on:introend={gotoProject} in:receive={{ key: 'expand' }} class="aspect-w-16 aspect-h-10 fixed top-0 w-screen">
 		<div class="absolute top-0">
 			<img src={transitionProject.headerImagePath} alt="" class="h-full w-full object-cover" />
 			<div class="fade-gradient absolute bottom-0  h-1/5 w-full" />
 		</div>
 	</div>
-{/if}
+{/if} -->
