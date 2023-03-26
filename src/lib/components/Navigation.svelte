@@ -31,9 +31,9 @@
 		class:h-screen-large={navOpen}
 	>
 		<div class="h-screen-large flex w-screen flex-col items-center justify-center">
-			<a href="/#work" on:click={() => (navOpen = false)} class="my-4 rounded-[1000px] px-10 py-2  decoration-accent-400 hover:line-through">WORK</a>
-			<a href="/about" on:click={() => (navOpen = false)} class="my-4 rounded-[1000px] px-10 py-2  decoration-accent-400 hover:line-through">ABOUT</a>
-			<a href="/contact" on:click={() => (navOpen = false)} class=" my-4 rounded-[1000px] px-10 py-2  decoration-accent-400 hover:line-through">CONTACT</a>
+			<a href="/#work" on:click={() => (navOpen = false)} class="menu-item relative my-4 rounded-[1000px] px-4 py-2 ">WORK</a>
+			<a href="/about" on:click={() => (navOpen = false)} class="menu-item relative my-4 rounded-[1000px] px-4 py-2  ">ABOUT</a>
+			<a href="/contact" on:click={() => (navOpen = false)} class="menu-item relative my-4 rounded-[1000px] px-4 py-2  ">CONTACT</a>
 			<div class="mt-8 flex items-center justify-center">
 				<a href="https://www.linkedin.com/in/jonas-wolter/" class="p-3">
 					<img src={linkedinIcon} alt="LinkedIn" />
@@ -59,5 +59,11 @@
 
 	.show-menu-tag {
 		@apply translate-x-0 opacity-100;
+	}
+
+	.menu-item:hover:after {
+		content: '';
+		@apply absolute right-0 h-[0.12em] w-full bg-accent-400;
+		top: 48%;
 	}
 </style>
