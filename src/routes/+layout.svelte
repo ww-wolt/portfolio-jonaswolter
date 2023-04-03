@@ -26,10 +26,10 @@
 </script>
 
 <div class="app">
-	<div id="background-fill" class="h-screen-large fixed top-0 -z-50 w-screen bg-backdrop " />
+	<div id="background-fill" class="h-screen-large fixed top-0 -z-50 w-screen  bg-backdrop" />
 	<Navigation />
 
-	<main class=" w-full  font-general">
+	<main class=" w-full overflow-y-hidden   font-general">
 		<slot />
 	</main>
 </div>

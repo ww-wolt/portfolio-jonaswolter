@@ -25,6 +25,9 @@ export async function fetchProjects() {
 			const script = dom.getElementsByTagName('script')[0]?.outerHTML;
 			rawHtml = rawHtml.replaceAll(script, '');
 
+			// Remove unnecessary whitespaces
+			rawHtml = rawHtml.replaceAll('&nbsp;', '');
+
 			// get slug
 			const originalSlug = path.split('/').at(-1).replace('.html', '').trim();
 			const slug = originalSlug.includes('.') ? originalSlug.split('.').at(-1) : originalSlug;
@@ -63,6 +66,6 @@ export async function fetchProjects() {
 		})
 	);
 	projects = allProjects;
-	console.log('🚀 ~ fetchProjects ~ projects:', projects);
+	// console.log('🚀 ~ fetchProjects ~ projects:', projects);
 	return projects;
 }
