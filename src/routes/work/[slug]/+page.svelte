@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import fadeGradient from '$lib/graphics/fade-gradient.png';
+	import Footer from '$lib/components/Footer.svelte';
 	import './project.css';
 
 	export let data;
@@ -63,6 +64,7 @@
 <div class="content-area xl:pt-18 min-h-screen w-full bg-backdrop pt-6 md:[&>*]:prose-lg 2xl:[&>*]:prose-xl md:pt-8 lg:pt-14 2xl:pt-32">
 	{@html data.rawHtml}
 </div>
+<Footer />
 
 <style>
 </style>
