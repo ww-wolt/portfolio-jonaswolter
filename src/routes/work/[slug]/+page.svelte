@@ -64,7 +64,8 @@
 <div class="content-area xl:pt-18 min-h-screen w-full bg-backdrop pt-6 md:[&>*]:prose-lg 2xl:[&>*]:prose-xl md:pt-8 lg:pt-14 2xl:pt-32">
 	{@html data.rawHtml}
 </div>
-<Footer />
+
+<!-- <Footer /> -->
 
 <style>
 </style>
