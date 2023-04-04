@@ -27,7 +27,7 @@
 			for (const child of gallery.children) {
 				let height, width;
 				if (child.tagName === 'IMG') {
-          await child.decode()
+					await child.decode();
 					height = child.naturalHeight;
 					width = child.naturalWidth;
 				} else {
