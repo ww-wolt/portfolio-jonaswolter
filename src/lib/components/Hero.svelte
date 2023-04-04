@@ -5,14 +5,13 @@
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
-	let arrow;
+	let arrow, arrowTrigger;
 
 	onMount(async () => {
 		gsap.registerPlugin(ScrollTrigger);
-
 		gsap.to(arrow, {
 			scrollTrigger: {
-				trigger: '.trigger',
+				trigger: arrowTrigger,
 				start: 'top top',
 				toggleActions: 'restart none none reverse'
 			},
@@ -21,26 +20,34 @@
 			duration: 0.8,
 			ease: 'power1.inOut'
 		});
+
+		const observer = new IntersectionObserver((entries) => {
+			const visible = entries[0].isIntersecting;
+			if (!visible) {
+				// gsap.set(arrow, { opacity: 0 });
+			}
+		});
+
+		observer.observe(arrowTrigger);
 	});
 </script>
 
-<section class=" h-screen-small relative flex  w-full  items-center justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:items-end">
-	<div class=" fluid-font-title w-full text-right font-medium ">
+<section class=" h-screen-small relative flex w-full items-center justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:items-end">
+	<div class=" fluid-font-title w-full text-right font-medium">
 		<h2 class=" fluid-font-subtitle font-normal leading-[1.4em]">Jonas Wolter</h2>
-		<div class="">
-			<h1 class="relative inline whitespace-nowrap">New Media <span class="artist">Artist</span></h1>
-		</div>
 
+		<div class="">
+			<h1 class="relative inline whitespace-nowrap">Media <span class="artist">Artist</span></h1>
+		</div>
 		<div class="">
 			<h1 class="relative mb-4 inline whitespace-nowrap">Interaction <span class="designer">Designer</span></h1>
 		</div>
-
 		<div class="">
 			<h1 class="relative inline whitespace-nowrap"><span class="programmer">Programmer</span></h1>
 		</div>
 	</div>
-	<div class="trigger absolute top-[10vh] hidden h-2 w-2" />
-	<div class="pointer-events-none fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20  xl:landscape:justify-start">
+	<div bind:this={arrowTrigger} class=" absolute top-[10vh] h-[30vh] w-2 opacity-0" />
+	<div class="pointer-events-none fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
 		<img bind:this={arrow} src={heroArrowIcon} class="w-8 sm:w-10 md:w-11 lg:w-12 xl:w-14" alt="Down Arrow" />
 	</div>
 </section>
@@ -48,7 +55,7 @@
 <style>
 	.artist::after {
 		content: '';
-		@apply absolute bottom-[-0.5%] right-0 -z-10 h-[0.12em] w-[33.3%] bg-accent-400;
+		@apply absolute bottom-[-0.5%] right-0 -z-10 h-[0.12em] w-[46.7%] bg-accent-400;
 	}
 
 	.designer::after {
