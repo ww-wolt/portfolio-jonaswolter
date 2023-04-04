@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import Background from '../lib/components/Background.svelte';
-	import Footer from '../lib/components/Footer.svelte';
-	import Hero from '../lib/components/Hero.svelte';
+	import Background from '$lib/components/Background.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Hero from '$lib/components/Hero.svelte';
 
-	import ProjectsGrid from '../lib/components/ProjectsGrid.svelte';
+	import ProjectsGrid from '$lib/components/ProjectsGrid.svelte';
 
 	export let data;
 
