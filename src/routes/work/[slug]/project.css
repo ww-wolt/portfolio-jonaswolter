@@ -1,0 +1,113 @@
+@layer project {
+	#header-image {
+		@apply hidden !important;
+	}
+
+	#info {
+		@apply max-w-full leading-normal text-black xl:px-6 !important;
+	}
+
+	#info > section {
+		@apply mb-[3em] mt-[5em] first-of-type:mt-0 md:mt-[9em]  !important;
+		@apply grid grid-flow-col-dense grid-cols-1 gap-x-8 lg:grid-cols-10;
+	}
+
+	#info > section > * {
+		@apply col-span-full;
+	}
+
+	#info #brief {
+		@apply lg:col-span-6 lg:col-start-1 xl:col-span-5 !important;
+	}
+
+	#info #brief > #title {
+		@apply text-3xl font-semibold uppercase leading-none md:text-4xl  2xl:text-5xl !important;
+	}
+
+	#info #brief > #subtitle {
+		@apply hidden;
+	}
+
+	#info #brief > #abstract {
+		@apply mb-[2em] mt-[2.4em] !important;
+	}
+
+	#info #brief > #keywords {
+		@apply col-span-6 col-start-1 px-0 !important;
+	}
+
+	#info #brief > #keywords > * {
+		@apply my-1 mr-1 inline-block rounded-full border border-neutral-400 px-3 font-normal leading-relaxed text-neutral-500 md:text-base 2xl:text-lg !important;
+	}
+
+	#info #facts {
+		@apply lg:col-span-3 lg:col-start-8 !important;
+	}
+
+	#info #facts > h4 {
+		@apply mx-0 mb-2 mt-[1.6em] text-xs font-medium uppercase leading-loose text-gray-400 first:mt-6 sm:first:mt-9 md:text-sm lg:first:mt-1 !important;
+	}
+
+	#info #facts > p {
+		@apply mb-2 mt-1 first:my-0 !important;
+	}
+
+	#info #facts > .details {
+		@apply hidden;
+	}
+
+	/* #info .gallery {
+		@apply col-span-full flex w-screen flex-row flex-wrap overflow-hidden p-4 !important;
+		margin-left: calc(-50vw + 50%);
+		margin-right: calc(-50vw + 50%);
+	}
+
+	#info .gallery > * {
+		 @apply h-40 w-20 !important; 
+	} 
+
+  #info .gallery img {
+		@apply h-20 w-10;
+	} */
+
+	#info .gallery-row {
+		@apply grid  max-md:grid-cols-1 !important;
+		@apply gap-6 px-6 py-3 first:pt-0 last:pb-0 sm:gap-8 sm:px-8 sm:py-4 lg:gap-12 lg:px-12 lg:py-6;
+		margin: 0 calc(50% - 50vw);
+	}
+
+	#info img {
+		@apply m-0 object-cover !important;
+	}
+
+	#info h3 {
+		@apply mt-0 hyphens-auto break-words align-top text-xl uppercase leading-tight md:text-[1.375rem] lg:col-span-3 lg:col-start-1 lg:text-right 2xl:col-span-2 2xl:col-start-2 !important;
+	}
+
+	#info p {
+		@apply mb-[3em] last:mb-0 last-of-type:bg-green-200/0 lg:col-span-5 lg:col-start-4 lg:mb-[4.5em] lg:mt-[-0.1em] !important;
+	}
+
+	#info p:only-child {
+		@apply m-0 lg:col-span-6 lg:col-start-3 !important;
+	}
+
+	#info .screen-width {
+		margin: 0 calc(50% - 50vw);
+	}
+
+	/* Workaround to let lenis scroll work also when hovering over the iframe
+  */
+	.lenis-scrolling iframe {
+		pointer-events: none;
+	}
+
+	/* Safari Fix */
+	section:has(iframe) {
+		@apply grid-cols-1 !important;
+	}
+
+	iframe {
+		@apply max-w-full !important;
+	}
+}

@@ -8,6 +8,9 @@ const config = {
 			runtime: 'edge',
 			regions: 'all'
 		})
+		// prerender: {
+		// 	entries: ['/work/dream-of-me', '/work/dont-answer-be-happy']
+		// }
 	},
 	preprocess: vitePreprocess()
 };

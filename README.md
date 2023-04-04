@@ -6,6 +6,9 @@ To acces site from another device in network:
 npm run dev -- --host
 ```
 
+See newest dev deployment
+https://portfolio-jonaswolter-git-dev-jonaswolter.vercel.app
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
