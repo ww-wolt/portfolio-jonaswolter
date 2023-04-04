@@ -41,10 +41,8 @@
 		height: 100lvh;
 	}
 
-	
-
 	.content-area {
-		@apply px-6 sm:px-9 md:px-28 lg:px-36 xl:px-48;
+		@apply px-6 sm:px-9 md:px-28 lg:px-36 xl:px-40 2xl:px-48;
 	}
 
 	.fade-gradient {

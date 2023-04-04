@@ -20,6 +20,35 @@
 				toggleActions: 'restart none none reverse'
 			}
 		});
+
+		const galleryRows = document.getElementsByClassName('gallery-row');
+		for (let gallery of galleryRows) {
+			const aspectRatios = [];
+			for (const child of gallery.children) {
+				let height, width;
+				if (child.tagName === 'IMG') {
+          await child.decode()
+					height = child.naturalHeight;
+					width = child.naturalWidth;
+				} else {
+					[height, width] = child.className
+						.split(' ')
+						.filter((str) => str.includes('aspect-'))
+						.sort()
+						.map((str) => str.replace('aspect-w-', '').replace('aspect-h-', ''));
+				}
+
+				const index = Array.from(gallery.children).indexOf(child);
+				console.log(child.tagName + '-' + index, 'height, width:', height, width);
+
+				if (!(width && height)) {
+					throw new Error('aspect ratio of gallery image is undefined');
+				}
+
+				aspectRatios.push(width / height);
+			}
+			gallery.style.gridTemplateColumns = aspectRatios.map((ratio) => `${ratio}fr `).join(' ');
+		}
 	});
 </script>
 
@@ -31,7 +60,7 @@
 		<div class="fade-gradient absolute bottom-0 h-1/5 w-full" />
 	</div>
 </div>
-<div class="content-area xl:pt-18 min-h-screen w-full bg-backdrop pt-4 md:[&>*]:prose-lg 2xl:[&>*]:prose-xl md:pt-8 lg:pt-14 2xl:pt-24">
+<div class="content-area xl:pt-18 min-h-screen w-full bg-backdrop pt-6 md:[&>*]:prose-lg 2xl:[&>*]:prose-xl md:pt-8 lg:pt-14 2xl:pt-32">
 	{@html data.rawHtml}
 </div>
 
