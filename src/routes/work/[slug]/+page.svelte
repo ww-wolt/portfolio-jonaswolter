@@ -49,7 +49,11 @@
 
 				aspectRatios.push(width / height);
 			}
-			gallery.style.gridTemplateColumns = aspectRatios.map((ratio) => `${ratio}fr `).join(' ');
+			const smallestRatio = Math.min(...aspectRatios);
+			gallery.style.gridTemplateColumns = aspectRatios
+				.map((ratio) => ratio / smallestRatio)
+				.map((ratio) => `${ratio}fr `)
+				.join(' ');
 		}
 	});
 </script>
