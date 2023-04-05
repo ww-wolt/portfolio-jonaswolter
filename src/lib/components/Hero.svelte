@@ -37,14 +37,17 @@
 		<h2 class=" fluid-font-subtitle font-normal leading-[1.4em]">Jonas Wolter</h2>
 
 		<div class="">
-			<h1 class="relative inline whitespace-nowrap">Media <span class="artist">Artist</span></h1>
+			<h1 class="relative mb-4 inline whitespace-nowrap">Creative <span class="coder">Coder</span></h1>
 		</div>
 		<div class="">
 			<h1 class="relative mb-4 inline whitespace-nowrap">Interaction <span class="designer">Designer</span></h1>
 		</div>
 		<div class="">
-			<h1 class="relative inline whitespace-nowrap"><span class="programmer">Programmer</span></h1>
+			<h1 class="relative inline whitespace-nowrap">Media <span class="artist">Artist</span></h1>
 		</div>
+		<!-- <div class="">
+			<h1 class="relative inline whitespace-nowrap"><span class="programmer">Programmer</span></h1>
+		</div> -->
 	</div>
 	<div bind:this={arrowTrigger} class=" absolute top-[10vh] h-[30vh] w-2 opacity-0" />
 	<div class="pointer-events-none fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
@@ -63,10 +66,15 @@
 		@apply absolute bottom-[-0.5%] right-0 -z-10 h-[0.12em] w-[43.3%] bg-accent-400;
 	}
 
-	.programmer::after {
+	.coder::after {
+		content: '';
+		@apply absolute bottom-[-0.5%] right-0 -z-10 h-[0.12em] w-[40.8%] bg-accent-400;
+	}
+
+	/* .programmer::after {
 		content: '';
 		@apply absolute bottom-[-0.5%] right-0 -z-10 h-[0.12em] w-[98.8%] bg-accent-400;
-	}
+	} */
 
 	.fluid-font-title {
 		font-size: clamp(27px, calc(1.6875rem + ((1vw - 3px) * 9.3902)), 104px);
