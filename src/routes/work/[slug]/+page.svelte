@@ -13,6 +13,7 @@
 		gsap.to('.parallax-image', {
 			yPercent: 55,
 			ease: 'none',
+			force3D: true,
 			scrollTrigger: {
 				trigger: '.parallax-wrapper',
 				start: 'top top',

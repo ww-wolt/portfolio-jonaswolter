@@ -17,6 +17,7 @@
 		gsap.to('.card', {
 			y: '-50vh',
 			ease: 'power1.out',
+			force3D: true,
 			scrollTrigger: {
 				trigger: '.projects',
 				stagger: 0.5,
