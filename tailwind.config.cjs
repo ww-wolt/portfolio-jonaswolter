@@ -23,7 +23,8 @@ module.exports = {
 					800: '#004A40',
 					900: '#00312B'
 				},
-				backdrop: '#ECECEC'
+				backdrop: '#ECECEC',
+				'dark-backdrop': '#121212'
 			},
 			transitionDuration: {
 				400: '400ms'
