@@ -49,22 +49,22 @@
 
 <section class="projects content-area -mb-80 pt-60">
 	<div id="work" />
-	<div class="grid gap-16 lg:grid-cols-2">
+	<div class="grid gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-12 xl:gap-16">
 		{#each projects as project, i (project.slug)}
 			<a href={project.url} data-sveltekit-reload on:click|preventDefault={() => goto(project.url)} class=" card group relative mb-2 first:col-span-full">
 				<article>
-					<div class="aspect-h-10 aspect-w-16 overflow-hidden rounded-3xl">
+					<div class="aspect-h-10 aspect-w-16 overflow-hidden rounded-2xl sm:rounded-3xl">
 						<img src={project.headerImagePath} alt="Project card" class="object-cover transition-all duration-400 ease-out group-hover:scale-[1.04]" />
 					</div>
 					<div
 						class="absolute -bottom-4 right-0 flex flex-col items-end justify-end transition-all duration-400 ease-out group-hover:-translate-x-3 group-hover:-translate-y-7"
 					>
 						<h5
-							class="translate-y-full rounded-full bg-black px-4 py-1 text-sm text-white opacity-0 transition-all duration-400 ease-out group-hover:translate-y-0 group-hover:opacity-100"
+							class="translate-y-full rounded-full bg-black px-4 py-1 text-xs text-white opacity-0 transition-all duration-400 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:text-sm"
 						>
 							{project.subtitle}
 						</h5>
-						<h4 class=" z-10 rounded-full bg-white px-4 py-1">{project.title}</h4>
+						<h4 class=" z-10 rounded-full bg-white px-4 py-1 text-sm sm:text-base">{project.title}</h4>
 					</div>
 				</article>
 			</a>
