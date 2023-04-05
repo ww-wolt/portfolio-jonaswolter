@@ -13,6 +13,7 @@
 		gsap.to('.parallax-image', {
 			yPercent: 55,
 			ease: 'none',
+			force3D: true,
 			scrollTrigger: {
 				trigger: '.parallax-wrapper',
 				start: 'top top',
@@ -48,14 +49,18 @@
 
 				aspectRatios.push(width / height);
 			}
-			gallery.style.gridTemplateColumns = aspectRatios.map((ratio) => `${ratio}fr `).join(' ');
+			const smallestRatio = Math.min(...aspectRatios);
+			gallery.style.gridTemplateColumns = aspectRatios
+				.map((ratio) => ratio / smallestRatio)
+				.map((ratio) => `${ratio}fr `)
+				.join(' ');
 		}
 	});
 </script>
 
 <!-- <h1>{data.project?.title}</h1> -->
 
-<div class="parallax-wrapper aspect-h-10 aspect-w-16 relative -z-10">
+<div class="parallax-wrapper aspect-h-12 lg:aspect-h-10 aspect-w-16 relative -z-10">
 	<div class="absolute top-0">
 		<img src={data.headerImagePath} alt={`Header of the project "${data.title}"`} class=" parallax-image h-full w-full object-cover" />
 		<div class="fade-gradient absolute bottom-0 h-1/5 w-full" />
