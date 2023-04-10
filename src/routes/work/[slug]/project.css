@@ -8,12 +8,16 @@
 	}
 
 	#info > section {
-		@apply mb-[3em] mt-[1em] first-of-type:mt-0 sm:mt-[4em] md:mt-[9em]  !important;
+		@apply mb-[3em] mt-[1em] first-of-type:mt-0 sm:mt-[4em] md:mt-[8em] !important;
 		@apply grid grid-flow-col-dense grid-cols-1 gap-x-8 lg:grid-cols-10;
 	}
 
 	#info > section > * {
 		@apply col-span-full;
+	}
+
+	#info .no-mb {
+		@apply mb-0 !important;
 	}
 
 	#info #brief {
@@ -42,10 +46,6 @@
 
 	#info #facts {
 		@apply lg:col-span-3 lg:col-start-8 !important;
-	}
-
-	#info #facts > h4 {
-		@apply mx-0 mb-2 mt-[1.6em] text-xs font-medium uppercase leading-loose text-gray-400 first:mt-6 sm:first:mt-9 md:text-sm lg:first:mt-1 !important;
 	}
 
 	#info #facts > p {
@@ -88,11 +88,39 @@
 	}
 
 	#info h3 {
-		@apply mt-0 hyphens-auto break-words align-top text-xl uppercase leading-tight md:text-[1.375rem] lg:col-span-3 lg:col-start-1 lg:text-right 2xl:col-span-2 2xl:col-start-2 !important;
+		@apply mt-0 inline-block break-words align-top text-xl uppercase leading-normal md:text-[1.375rem] lg:col-span-3 lg:col-start-1 lg:text-right 2xl:col-span-2 2xl:col-start-2 !important;
+
+		/* background-color: aqua; */
+	}
+
+	#info h3 span {
+		@apply px-[0.5em] py-[0.125rem];
+		box-decoration-break: clone;
+		background-image: linear-gradient(theme('colors.accent.300'), theme('colors.accent.300'));
+		background-size: 100% 40%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+
+	#info #facts > h4 {
+		@apply mx-0 mb-3 mt-[2em]  text-sm font-semibold uppercase leading-normal first:mt-6  sm:first:mt-9 md:text-base lg:first:mt-1 !important;
+	}
+
+	#info #facts > h4 span {
+		@apply px-[0.4em] py-[0.1rem];
+		box-decoration-break: clone;
+		background-image: linear-gradient(theme('colors.accent.300'), theme('colors.accent.300'));
+		background-size: 100% 40%;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+
+	#info #facts > h5 {
+		@apply -mb-1 text-sm text-neutral-500 md:text-base !important;
 	}
 
 	#info p {
-		@apply mb-[3em] last:mb-0 last-of-type:bg-green-200/0 lg:col-span-5 lg:col-start-4 lg:mb-[4.5em] lg:mt-[-0.1em] !important;
+		@apply mb-[3em] last:mb-0 last-of-type:bg-green-200/0 lg:col-span-5 lg:col-start-4 lg:mb-[4.5em] lg:mt-[0.05em] !important;
 	}
 
 	#info p:only-child {
@@ -107,8 +135,36 @@
 		@apply my-6 !important;
 	}
 
+	#info figure {
+		@apply m-0 !important;
+	}
+
+	#info figure > *:nth-last-child(2) {
+		@apply mb-2 pb-0 !important;
+	}
+
+	#info figure figcaption {
+		@apply m-0 py-0 !important;
+	}
+
+	#info .go-big figcaption {
+		@apply content-area md:px-4;
+	}
+
+	#info .gallery-row + figcaption.go-big {
+		@apply px-6 max-md:grid-cols-1 sm:px-9 md:px-12 lg:px-16  xl:px-20 !important;
+	}
+
+	#info small {
+		font-size: 70% !important;
+	}
+
+	/* #info figure img {
+		@apply mb-0 !important;
+	} */
+
 	#info .go-big {
-		margin: 0 calc(50% - 50vw);
+		margin: 0 calc(50% - 50vw) !important;
 	}
 
 	/* Workaround to let lenis scroll work also when hovering over the iframe
