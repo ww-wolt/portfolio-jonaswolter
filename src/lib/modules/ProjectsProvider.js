@@ -17,6 +17,9 @@ export async function fetchProjects() {
 			// adjust image path
 			rawHtml = rawHtml.replaceAll('../../../static', '');
 
+			// Remove unnecessary whitespaces
+			rawHtml = rawHtml.replaceAll('&nbsp;', '');
+
 			const dom = parser.parseFromString(rawHtml);
 
 			// remove styles
@@ -25,8 +28,19 @@ export async function fetchProjects() {
 			const script = dom.getElementsByTagName('script')[0]?.outerHTML;
 			rawHtml = rawHtml.replaceAll(script, '');
 
-			// Remove unnecessary whitespaces
-			rawHtml = rawHtml.replaceAll('&nbsp;', '');
+			// wrap all h3 into spans
+			const h3Nodes = dom.getElementsByTagName('h3');
+			h3Nodes.forEach((node) => {
+				const adjusted = node.outerHTML.replace(node.innerHTML, `<span>${node.innerHTML}</span>`);
+				rawHtml = rawHtml.replace(node.outerHTML, adjusted);
+			});
+
+			// wrap all h4 into spans
+			const h4Nodes = dom.getElementsByTagName('h4');
+			h4Nodes.forEach((node) => {
+				const adjusted = node.outerHTML.replace(node.innerHTML, `<span>${node.innerHTML}</span>`);
+				rawHtml = rawHtml.replace(node.outerHTML, adjusted);
+			});
 
 			// get slug
 			const originalSlug = path.split('/').at(-1).replace('.html', '').trim();
