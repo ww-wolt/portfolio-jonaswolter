@@ -8,7 +8,7 @@
 	}
 
 	#info > section {
-		@apply mb-[3em] mt-[1em] first-of-type:mt-0 sm:mt-[4em] md:mt-[8em] !important;
+		@apply my-[2em] first-of-type:my-0 sm:my-[4em] md:my-[8em] !important;
 		@apply grid grid-flow-col-dense grid-cols-1 gap-x-8 lg:grid-cols-10;
 	}
 
@@ -88,7 +88,7 @@
 	}
 
 	#info h3 {
-		@apply mt-0 inline-block break-words align-top text-xl uppercase leading-normal md:text-[1.375rem] lg:col-span-3 lg:col-start-1 lg:text-right 2xl:col-span-2 2xl:col-start-2 !important;
+		@apply mt-0 inline-block break-words align-top text-lg uppercase leading-normal  md:text-[1.375rem] lg:col-span-3 lg:col-start-1 lg:text-right 2xl:col-span-2 2xl:col-start-2 !important;
 
 		/* background-color: aqua; */
 	}
@@ -157,6 +157,10 @@
 
 	#info small {
 		font-size: 70% !important;
+	}
+
+	#info strong {
+		@apply font-medium !important;
 	}
 
 	/* #info figure img {
