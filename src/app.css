@@ -15,7 +15,7 @@
 		font-weight: 400;
 		font-style: normal;
 	}
-  @font-face {
+	@font-face {
 		font-family: 'General Sans';
 		src: url('/fonts/GeneralSans-Italic.woff2') format('woff2'), url('/fonts/GeneralSans-Italic.woff') format('woff');
 		font-weight: 400;
@@ -55,23 +55,25 @@
 		@apply relative w-fit cursor-pointer text-accent-500 no-underline !important;
 	}
 
-	.inline-link:before {
+	.inline-link::after {
 		content: '';
-		@apply absolute bottom-[0.1em] right-0 h-[0.08em] w-full origin-left scale-x-100 bg-accent-500 !important;
+		@apply absolute right-0 w-full origin-left scale-x-100 bg-accent-500 !important;
+		bottom: 0.04em !important;
+		height: 0.08em !important;
 		transition: transform 0.75s cubic-bezier(0.9, 0, 0.1, 1);
 	}
 
-	.inline-link:hover:before {
+	.inline-link:hover::after {
 		@apply origin-right scale-x-0 !important;
 	}
 
-  .inline-link.shy-link:before {
-    @apply scale-x-0 origin-right !important;
-  }
+	.inline-link.shy-link::after {
+		@apply origin-right scale-x-0 !important;
+	}
 
-  .inline-link.shy-link:hover:before {
-    @apply scale-x-100 origin-left !important;
-  }
+	.inline-link.shy-link:hover::after {
+		@apply origin-left scale-x-100 !important;
+	}
 
 	.fade-gradient {
 		background-image: url('$lib/graphics/fade-gradient.png');
