@@ -18,7 +18,7 @@
 				I am a young designer and programmer who loves to critically explore technology and is passionate about creating interactive experiences that blend
 				physical and digital worlds.
 			</p>
-			<a class="mb-4 text-base text-accent-500 hover:underline" href="/files/CV_Jonas_Wolter.pdf" target="_blank" rel="noreferrer">Download CV</a>
+			<a class="inline-link shy-link mb-4 text-base" href="/files/CV_Jonas_Wolter.pdf" target="_blank" rel="noreferrer">Download CV</a>
 		</div>
 	</div>
 </section>

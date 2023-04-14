@@ -128,7 +128,7 @@
 	}
 
 	#info a {
-		@apply font-normal text-accent-500 hover:text-accent-600 !important;
+		@apply inline-link font-normal !important;
 	}
 
 	#info img {
