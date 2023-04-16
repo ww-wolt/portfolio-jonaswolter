@@ -4,6 +4,7 @@
 	import gsap from 'gsap/dist/gsap';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import { getLenis } from '$lib/modules/LenisScroll.js';
 
 	let arrow, arrowTrigger;
 
@@ -30,6 +31,10 @@
 
 		observer.observe(arrowTrigger);
 	});
+
+	function handleArrowClick() {
+		getLenis().scrollTo(window.innerHeight * 0.75, { duration: 3 }); // Alternative: lerp: 0.025
+	}
 </script>
 
 <section class=" h-screen-small relative flex w-full items-center justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:items-end">
@@ -50,8 +55,10 @@
 		</div> -->
 	</div>
 	<div bind:this={arrowTrigger} class=" absolute top-[10vh] h-[30vh] w-2 opacity-0" />
-	<div class="pointer-events-none fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
-		<img bind:this={arrow} src={heroArrowIcon} class="w-8 sm:w-10 md:w-11 lg:w-12 xl:w-14" alt="Down Arrow" />
+	<div class="fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
+		<button on:click={() => handleArrowClick()}>
+			<img bind:this={arrow} src={heroArrowIcon} class="w-8 sm:w-10 md:w-11 lg:w-12 xl:w-14" alt="Down Arrow" />
+		</button>
 	</div>
 </section>
 

@@ -15,7 +15,7 @@
 	onMount(async () => {
 		gsap.registerPlugin(ScrollTrigger);
 		gsap.to('.card', {
-			y: '-50vh',
+			y: '-55vh',
 			ease: 'power1.out',
 			force3D: true,
 			scrollTrigger: {
@@ -47,7 +47,7 @@
 	}
 </script>
 
-<section class="projects content-area -mb-80 pt-60">
+<section class="projects content-area -mb-80 pt-[26vh]">
 	<div id="work" />
 	<div class="grid gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-12 xl:gap-16">
 		{#each projects as project, i (project.slug)}
