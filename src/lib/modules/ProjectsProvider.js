@@ -61,7 +61,7 @@ export async function fetchProjects() {
 			const keywords = dom
 				.getElementById('keywords')
 				?.innerHTML.split('</li>')
-				.map((token) => token.replaceAll('<li>', '').replaceAll('&nbsp;', '').trim())
+				.map((token) => token.replaceAll('<li>', '').replaceAll('&nbsp;', '').replaceAll('<br>', '').replaceAll('<br/>', '').trim())
 				.filter((token) => token != '');
 
 			// get content html

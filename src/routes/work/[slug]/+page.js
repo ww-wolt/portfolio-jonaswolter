@@ -13,5 +13,17 @@ export async function load({ params }) {
 		// throw error(400, 'oh no how bad');
 	}
 
-	return { ...project };
+	// const CHAR_LIMIT = 20;
+	// function trimEllipsis(input) {
+	// 	return input.length > CHAR_LIMIT ? `${input.substring(0, CHAR_LIMIT)}…` : input;
+	// }
+
+	let seo = {
+		title: project.title + ' | ' + project.subtitle,
+		description: project.abstract,
+		keywords: project.keywords.join(', '),
+		image: project.headerImagePath
+	};
+
+	return { ...project, seo };
 }
