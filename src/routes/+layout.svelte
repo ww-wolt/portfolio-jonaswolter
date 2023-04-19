@@ -21,7 +21,7 @@
 	});
 
 	$: seo = $page.data?.seo;
-	// $: console.log('🚀 ~ $page:', $page);
+	$: baseURL = $page?.url.href.replaceAll($page?.url.pathname, '');
 </script>
 
 <!-- Content -->
@@ -49,7 +49,7 @@
 	<!-- Open Graph -->
 	<meta property="og:title" content={seo?.title || DEFAULT_TITLE} />
 	<meta property="og:description" content={seo?.description || DEFAULT_DESCRIPTION} />
-	<meta property="og:image" content={$page?.url.origin + (seo?.image || DEFAULT_IMAGE_PATH)} />
+	<meta property="og:image" content={baseURL + (seo?.image || DEFAULT_IMAGE_PATH)} />
 	<meta property="og:url" content={$page?.url.href} />
 	<meta property="og:type" content="website" />
 
@@ -57,5 +57,5 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={seo?.title || DEFAULT_TITLE} />
 	<meta name="twitter:description" content={seo?.description || DEFAULT_DESCRIPTION} />
-	<meta name="twitter:image" content={$page?.url.origin + (seo?.image || DEFAULT_IMAGE_PATH)} />
+	<meta name="twitter:image" content={baseURL + (seo?.image || DEFAULT_IMAGE_PATH)} />
 </svelte:head>
