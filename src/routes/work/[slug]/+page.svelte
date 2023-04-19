@@ -41,7 +41,7 @@
 				}
 
 				const index = Array.from(gallery.children).indexOf(child);
-				console.log(child.tagName + '-' + index, 'height, width:', height, width);
+				// console.log(child.tagName + '-' + index, 'height, width:', height, width);
 
 				if (!(width && height)) {
 					throw new Error('aspect ratio of gallery image is undefined');
