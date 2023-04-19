@@ -21,7 +21,7 @@
 	});
 
 	$: seo = $page.data?.seo;
-	$: console.log('🚀 ~ $page:', $page);
+	// $: console.log('🚀 ~ $page:', $page);
 </script>
 
 <!-- Content -->
