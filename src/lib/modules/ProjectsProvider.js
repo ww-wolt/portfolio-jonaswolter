@@ -58,8 +58,9 @@ export async function fetchProjects() {
 			const abstract = dom
 				.getElementById('abstract')
 				?.textContent.trim()
-				.replaceAll(/\r?\n|\r/g, '') // Remove newlines
-				.replaceAll('\t', ''); // Remove tabs
+				.replaceAll(/\r?\n|\r/g, ' ') // Remove newlines
+				.replaceAll('\t', ' ') // Remove tabs
+				.replaceAll(/ +(?= )/g, ''); // Remove multiple whitespaces
 
 			// get keywords
 			const keywords = dom
