@@ -55,7 +55,11 @@ export async function fetchProjects() {
 			const subtitle = dom.getElementById('subtitle')?.innerHTML.trim();
 
 			// get abstract
-			const abstract = dom.getElementById('abstract')?.textContent.trim();
+			const abstract = dom
+				.getElementById('abstract')
+				?.textContent.trim()
+				.replaceAll(/\r?\n|\r/g, '') // Remove newlines
+				.replaceAll('\t', ''); // Remove tabs
 
 			// get keywords
 			const keywords = dom
