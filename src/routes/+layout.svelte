@@ -21,7 +21,7 @@
 	});
 
 	$: seo = $page.data?.seo;
-	$: baseURL = $page?.url.href.replaceAll($page?.url.pathname, '');
+	$: baseURL = $page?.url.origin;
 </script>
 
 <!-- Content -->
