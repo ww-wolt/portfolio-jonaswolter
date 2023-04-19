@@ -41,7 +41,7 @@
 				}
 
 				const index = Array.from(gallery.children).indexOf(child);
-				console.log(child.tagName + '-' + index, 'height, width:', height, width);
+				// console.log(child.tagName + '-' + index, 'height, width:', height, width);
 
 				if (!(width && height)) {
 					throw new Error('aspect ratio of gallery image is undefined');
@@ -62,7 +62,7 @@
 
 <div class="parallax-wrapper aspect-h-12 aspect-w-16 relative -z-10 lg:aspect-h-10">
 	<div class="absolute top-0">
-		<img src={data.headerImagePath} alt={`Header of the project "${data.title}"`} class=" parallax-image h-full w-full object-cover" />
+		<img src={data.headerImagePath} alt={`Header of project "${data.title}"`} class=" parallax-image h-full w-full object-cover" />
 		<div class="fade-gradient absolute bottom-0 h-1/5 w-full" />
 	</div>
 </div>

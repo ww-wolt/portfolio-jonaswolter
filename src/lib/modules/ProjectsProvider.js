@@ -55,13 +55,18 @@ export async function fetchProjects() {
 			const subtitle = dom.getElementById('subtitle')?.innerHTML.trim();
 
 			// get abstract
-			const abstract = dom.getElementById('abstract')?.textContent.trim();
+			const abstract = dom
+				.getElementById('abstract')
+				?.textContent.trim()
+				.replaceAll(/\r?\n|\r/g, ' ') // Remove newlines
+				.replaceAll('\t', ' ') // Remove tabs
+				.replaceAll(/ +(?= )/g, ''); // Remove multiple whitespaces
 
 			// get keywords
 			const keywords = dom
 				.getElementById('keywords')
 				?.innerHTML.split('</li>')
-				.map((token) => token.replaceAll('<li>', '').replaceAll('&nbsp;', '').trim())
+				.map((token) => token.replaceAll('<li>', '').replaceAll('&nbsp;', '').replaceAll('<br>', '').replaceAll('<br/>', '').trim())
 				.filter((token) => token != '');
 
 			// get content html

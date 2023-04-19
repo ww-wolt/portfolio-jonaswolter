@@ -54,7 +54,11 @@
 			<a href={project.url} data-sveltekit-reload on:click|preventDefault={() => goto(project.url)} class=" card group relative mb-2 first:col-span-full">
 				<article>
 					<div class="aspect-h-10 aspect-w-16 overflow-hidden rounded-2xl sm:rounded-3xl">
-						<img src={project.headerImagePath} alt="Project card" class="object-cover transition-all duration-400 ease-out group-hover:scale-[1.04]" />
+						<img
+							src={project.headerImagePath}
+							alt={`Project "${project.title}", ${project.subtitle}`}
+							class="object-cover transition-all duration-400 ease-out group-hover:scale-[1.04]"
+						/>
 					</div>
 					<div
 						class="absolute -bottom-4 right-0 flex flex-col items-end justify-end transition-all duration-400 ease-out group-hover:-translate-x-3 group-hover:-translate-y-7"
