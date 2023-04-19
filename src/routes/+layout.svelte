@@ -1,7 +1,7 @@
 <script>
 	export const prerender = true;
 
-	const DEFAULT_TITLE = 'Jonas Wolter | Creative Coder, Interaction Designer, Media Artist';
+	const DEFAULT_TITLE = 'Jonas Wolter – Creative Coder, Interaction Designer, Media Artist';
 	const DEFAULT_DESCRIPTION =
 		"I'm a young designer and programmer who loves to critically explore technology and is passionate about creating interactive experiences that blend physical and digital worlds.";
 	const DEFAULT_IMAGE_PATH = '/images/portrait-jonas-wolter.jpg';
@@ -21,7 +21,6 @@
 	});
 
 	$: seo = $page.data?.seo;
-	$: baseURL = $page?.url.origin;
 </script>
 
 <!-- Content -->
@@ -49,7 +48,7 @@
 	<!-- Open Graph -->
 	<meta property="og:title" content={seo?.title || DEFAULT_TITLE} />
 	<meta property="og:description" content={seo?.description || DEFAULT_DESCRIPTION} />
-	<meta property="og:image" content={baseURL + (seo?.image || DEFAULT_IMAGE_PATH)} />
+	<meta property="og:image" content={$page?.url.origin + (seo?.image || DEFAULT_IMAGE_PATH)} />
 	<meta property="og:url" content={$page?.url.href} />
 	<meta property="og:type" content="website" />
 
@@ -57,5 +56,5 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={seo?.title || DEFAULT_TITLE} />
 	<meta name="twitter:description" content={seo?.description || DEFAULT_DESCRIPTION} />
-	<meta name="twitter:image" content={baseURL + (seo?.image || DEFAULT_IMAGE_PATH)} />
+	<meta name="twitter:image" content={$page?.url.origin + (seo?.image || DEFAULT_IMAGE_PATH)} />
 </svelte:head>

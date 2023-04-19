@@ -19,7 +19,7 @@ export async function load({ params }) {
 	// }
 
 	let seo = {
-		title: project.title + ' | ' + project.subtitle,
+		title: project.title + ' – ' + project.subtitle,
 		description: project.abstract,
 		keywords: project.keywords.join(', '),
 		image: project.headerImagePath

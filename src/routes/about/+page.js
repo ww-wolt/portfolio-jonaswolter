@@ -1,6 +1,6 @@
 export async function load({ params }) {
 	let seo = {
-		title: 'Jonas Wolter | About'
+		title: 'About | Jonas Wolter'
 	};
 	return { seo };
 }
