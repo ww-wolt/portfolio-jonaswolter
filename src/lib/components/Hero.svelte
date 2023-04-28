@@ -56,7 +56,7 @@
 	</div>
 	<div bind:this={arrowTrigger} class=" absolute top-[10vh] h-[30vh] w-2 opacity-0" />
 	<div class="fixed bottom-0 flex w-full items-end justify-center p-6 sm:p-9 md:p-12 lg:p-16 xl:p-20 xl:landscape:justify-start">
-		<button on:click={() => handleArrowClick()}>
+		<button aria-hidden="true" on:click={() => handleArrowClick()}>
 			<img bind:this={arrow} src={heroArrowIcon} class="w-8 sm:w-10 md:w-11 lg:w-12 xl:w-14" alt="" />
 		</button>
 	</div>
