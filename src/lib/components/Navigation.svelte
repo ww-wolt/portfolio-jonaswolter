@@ -75,9 +75,9 @@
 				<a href="https://vimeo.com/jonaswolter" target="_blank" class="m-4">
 					<img class="h-6 w-6 lg:h-8 lg:w-8" src={vimeoIcon} alt="Vimeo" />
 				</a>
-				<!-- <a href="https://www.instagram.com/moonclimber_/" class="p-3">
-					<img src={instagramIcon} alt="Instagram" />
-				</a> -->
+				<a href="https://www.instagram.com/moonclimber_/" target="_blank" class="m-4">
+					<img class="h-6 w-6 lg:h-8 lg:w-8" src={instagramIcon} alt="Instagram" />
+				</a>
 			</div>
 		</div>
 	</div>
