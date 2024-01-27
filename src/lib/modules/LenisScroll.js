@@ -22,6 +22,6 @@ export function initLenis() {
 }
 
 export function getLenis() {
-	console.error('Lenis has to be initialized first before using it');
+	if(!lenis) console.error('Lenis has to be initialized first before using it');
 	return lenis;
 }
