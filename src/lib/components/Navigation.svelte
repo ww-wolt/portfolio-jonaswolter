@@ -69,13 +69,13 @@
 				<a href="https://www.linkedin.com/in/jonas-wolter/" target="_blank" class="m-4">
 					<img class="h-6 w-6 lg:h-8 lg:w-8" src={linkedinIcon} alt="LinkedIn" />
 				</a>
-				<a href="https://github.com/moonclimber1" target="_blank" class="m-4">
+				<a href="https://github.com/ww-wolt" target="_blank" class="m-4">
 					<img class="h-6 w-6 lg:h-8 lg:w-8" src={githubIcon} alt="Github" />
 				</a>
 				<a href="https://vimeo.com/jonaswolter" target="_blank" class="m-4">
 					<img class="h-6 w-6 lg:h-8 lg:w-8" src={vimeoIcon} alt="Vimeo" />
 				</a>
-				<a href="https://www.instagram.com/moonclimber_/" target="_blank" class="m-4">
+				<a href="https://www.instagram.com/ww.wolt" target="_blank" class="m-4">
 					<img class="h-6 w-6 lg:h-8 lg:w-8" src={instagramIcon} alt="Instagram" />
 				</a>
 			</div>
