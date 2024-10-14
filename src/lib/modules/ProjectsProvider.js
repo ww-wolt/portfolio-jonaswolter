@@ -9,7 +9,7 @@ let projects;
 export async function fetchProjects() {
 	if (projects) return projects;
 
-	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });
+	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });//*/
 	const allProjects = await Promise.all(
 		Object.entries(allFiles).map(async ([path, resolver]) => {
 			let rawHtml = await resolver();
