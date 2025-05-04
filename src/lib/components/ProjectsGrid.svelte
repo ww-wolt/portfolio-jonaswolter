@@ -77,7 +77,7 @@
 </section>
 
 <!-- {#if transitionActive}
-	<div on:introend={gotoProject} in:receive={{ key: 'expand' }} class="aspect-w-16 aspect-h-10 fixed top-0 w-screen">
+	<div on:introend={gotoProject} in:receive|global={{ key: 'expand' }} class="aspect-w-16 aspect-h-10 fixed top-0 w-screen">
 		<div class="absolute top-0">
 			<img src={transitionProject.headerImagePath} alt="" class="h-full w-full object-cover" />
 			<div class="fade-gradient absolute bottom-0  h-1/5 w-full" />
