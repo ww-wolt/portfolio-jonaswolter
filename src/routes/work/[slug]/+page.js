@@ -4,8 +4,18 @@ import { fetchProjects } from '$lib/modules/ProjectsProvider';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-	let projects = await fetchProjects();
 
+
+	// Redirect to new slug if necessary
+	const redirectMap = {
+		'feed-back-loop': 'do-not-feed-the-musicians',
+	};
+	if (redirectMap[params.slug]) {
+		throw redirect(301, `/work/${redirectMap[params.slug]}`);
+	}
+
+	// Get dynamic projects
+	let projects = await fetchProjects();
 	let project = projects.find((project) => project.slug == params.slug);
 
 	if (!project) {
