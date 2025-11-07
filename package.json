@@ -27,6 +27,9 @@
 		"vite": "^4.0.0"
 	},
 	"type": "module",
+	"engines": {
+		"node": "24.x"
+	},
 	"dependencies": {
 		"@studio-freight/lenis": "^1.0.4",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
