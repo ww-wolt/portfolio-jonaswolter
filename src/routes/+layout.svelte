@@ -4,7 +4,7 @@
 	const DEFAULT_TITLE = 'Jonas Wolter – Creative Coder, Interaction Designer, Media Artist';
 	const DEFAULT_DESCRIPTION =
 		"I'm a young designer and programmer who loves to critically explore technology and is passionate about creating interactive experiences that blend physical and digital worlds.";
-	const DEFAULT_IMAGE_PATH = '/images/portrait-jonas-wolter.jpg';
+	const DEFAULT_IMAGE_PATH = '/images/portrait.webp';
 
 	import '../app.css';
 
