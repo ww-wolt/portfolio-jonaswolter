@@ -2,7 +2,7 @@
 	import Background from '$lib/components/Background.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
-	// import portraitImage from '/images/portrait-jonas-wolter.jpg';
+	// import portraitImage from '/images/portrait.webp';
 	// import pdf from '$lib/files/CV_Jonas_Wolter.pdf';
 </script>
 
