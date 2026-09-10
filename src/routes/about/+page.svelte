@@ -15,8 +15,7 @@
 		<div class="flex flex-col justify-center md:col-span-5 md:col-start-6">
 			<h2 class="mb-8 text-xl font-medium md:text-3xl">Jonas Wolter</h2>
 			<p class="mb-6 text-base md:text-xl">
-				I am a young designer and programmer who loves to critically explore technology and is passionate about creating interactive experiences that blend
-				physical and digital worlds.
+				Jonas Wolter is a designer, media artist and creative coder based in Schaffhausen, Switzerland. His work explores the political dimensions of technological systems, ranging from interactive installations, immersive experiences and audiovisual performances to art projects in speculative design and low tech. He studied Computer Science & Interaction Design at Lucerne University of Applied Sciences and Arts (HSLU) and Media Design at the Haute École d'Art et de Design Genève (HEAD) and is co-founder of the art collective «kukuc».
 			</p>
 			<a class="inline-link shy-link mb-4 text-base" href="/files/CV_Jonas_Wolter.pdf" target="_blank" rel="noreferrer">Download CV</a>
 		</div>
