@@ -9,6 +9,7 @@ let projects;
 export async function fetchProjects() {
 	if (projects) return projects;
 
+	// Only *.html is matched: drafts (*.html.draft) are never bundled, listed or routed
 	const allFiles = import.meta.glob('/src/lib/projects/*.html', { as: 'raw' });//*/
 	const allProjects = await Promise.all(
 		Object.entries(allFiles).map(async ([path, resolver]) => {
